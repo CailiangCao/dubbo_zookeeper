@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CustomBeanRegistry">
+    <option name="map">
+      <map>
+        <entry key="&lt;dubbo:service xmlns:dubbo=&quot;http://code.alibabatech.com/schema/dubbo&quot; interface=&quot;com.itheima.service.UserService&quot; ref=&quot;userService&quot; timeout=&quot;0&quot; async=&quot;false&quot; version=&quot;0.0.0&quot; delay=&quot;0&quot; /&gt;">
+          <value>
+            <list>
+              <CustomBeanInfo>
+                <option name="beanName" value="com.itheima.service.UserService" />
+                <option name="beanClassName" value="com.alibaba.dubbo.config.spring.ServiceBean" />
+                <option name="idAttribute" value="interface" />
+              </CustomBeanInfo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--dubbo应用名称:提供服务的服务名字-->
+    <dubbo:application name="dubbo_provider01"/>
+    <!--服务注册中地址:将服务注册到哪个zookeeper里面-->
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+    <dubbo:protocol name="dubbo" port="20882"/>
+
+    <!--指定暴露的服务接口以及实例:将接口(服务)指定暴露出来,即注册-->
+    <dubbo:service interface="com.itheima.service.UserService" ref="userService"/>
+
+    <!--配置业务类实例-->
+    <bean class="com.itheima.service.impl.UserServiceImpl" id="userService"/>
+
+    <context:component-scan base-package="com.itheima"/>
+
+</beans>
